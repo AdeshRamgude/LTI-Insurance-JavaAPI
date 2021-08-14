@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,5 +29,24 @@ public class ClaimController {
 	@PostMapping("/claim")
 	public boolean addClaim(@RequestBody Claim claim) {
 		return claimService.addClaim(claim);
+	}
+	
+	@GetMapping("/admin")
+	public List<Claim> getAllStatus(){
+		return claimService.getStatus();
+	}
+	
+	@PostMapping("/admin")
+	public boolean addStatus(@RequestBody Claim claim) {
+		return claimService.addStatus(claim);
+	}
+	@GetMapping("/admin/{id}")
+	public Claim getbyid(@PathVariable(value="id")int id) {
+		return claimService.getbyid(id);
+	}
+	
+	@GetMapping("/claim/{id}")
+	public List<Claim> getbyuserid(@PathVariable(value="id")int id) {
+		return claimService.getbyuserid(id);
 	}
 }

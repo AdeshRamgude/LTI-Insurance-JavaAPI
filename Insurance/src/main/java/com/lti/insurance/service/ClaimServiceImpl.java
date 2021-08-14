@@ -28,4 +28,28 @@ public class ClaimServiceImpl implements ClaimService{
 		return true;
 	}
 
+	@Override
+	public boolean addStatus(Claim claim) {
+		claimRepo.save(claim);
+		return true;
+	}
+
+	@Override
+	public List<Claim> getStatus() {
+		// TODO Auto-generated method stub
+		return claimRepo.findAll();
+	}
+
+	@Override
+	public Claim getbyid(int id) {
+		// TODO Auto-generated method stub
+		return claimRepo.findById(id).get();
+	}
+
+	@Override
+	public List<Claim> getbyuserid(int id) {
+		// TODO Auto-generated method stub
+		return claimRepo.getbyuserid(id);
+	}
+
 }

@@ -5,11 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lti.insurance.model.Claim;
 import com.lti.insurance.model.VehicleClaim;
 import com.lti.insurance.service.VehicleClaimService;
 
@@ -29,5 +32,24 @@ public class VehicleClaimController {
 	public boolean addVehicleClaim(@RequestBody VehicleClaim vehicleClaim) {
 		return vehicleClaimService.addVehicleClaim(vehicleClaim);
 	}
-
+	
+	@GetMapping("/adminvehicle")
+	public List<VehicleClaim> getAllVehicleStatus(){
+		return vehicleClaimService.getVehicleStatus();
+	}
+	
+	@PutMapping("/admin")
+	public boolean addVehicleStatus(@RequestBody VehicleClaim vehicleclaim) {
+		return vehicleClaimService.addVehicleStatus(vehicleclaim);
+	}
+	
+	@GetMapping("/admin/vehicleclaim/{id}")
+	public VehicleClaim getbyidvehicle(@PathVariable(value="id")int id) {
+		return vehicleClaimService.getbyidvehicle(id);
+	}
+	
+	@PutMapping("/admin/vehicleclaim")
+	public boolean addVehicleStatus1(@RequestBody VehicleClaim vehicleclaim) {
+		return vehicleClaimService.addVehicleStatus(vehicleclaim);
+	}
 }

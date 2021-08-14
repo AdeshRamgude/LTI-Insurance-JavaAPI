@@ -28,4 +28,32 @@ public class VehicleClaimServiceImpl implements VehicleClaimService {
 		return true;
 	}
 
+	@Override
+	public List<VehicleClaim> getVehicleStatus() {
+		// TODO Auto-generated method stub
+		return vehicleclaimRepo.findAll();
+	}
+
+	@Override
+	public boolean addVehicleStatus(VehicleClaim vehicleclaim) {
+		// TODO Auto-generated method stub
+		vehicleclaimRepo.save(vehicleclaim);
+		return true;
+	}
+
+	@Override
+	public VehicleClaim getbyidvehicle(int id) {
+		// TODO Auto-generated method stub
+		return vehicleclaimRepo.findById(id).get();
+	}
+
+	@Override
+	public boolean addVehicleStatus1(VehicleClaim vehicleclaim) {
+		// TODO Auto-generated method stub
+		vehicleclaimRepo.save(vehicleclaim);
+		return true;
+	}
+
+
+
 }
