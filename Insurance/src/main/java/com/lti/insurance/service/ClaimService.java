@@ -12,5 +12,6 @@ public interface ClaimService {
 	public boolean addStatus(Claim claim);
 	
 	public Claim getbyid(int id);
+	
 	public List<Claim> getbyuserid(int id);
 }
