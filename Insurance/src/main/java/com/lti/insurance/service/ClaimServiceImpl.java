@@ -42,14 +42,19 @@ public class ClaimServiceImpl implements ClaimService{
 
 	@Override
 	public Claim getbyid(int id) {
-		// TODO Auto-generated method stub
 		return claimRepo.findById(id).get();
 	}
 
+	
 	@Override
 	public List<Claim> getbyuserid(int id) {
 		// TODO Auto-generated method stub
 		return claimRepo.getbyuserid(id);
+	}
+
+	@Override
+	public int highestid() {
+		return claimRepo.getHigestId();
 	}
 
 }

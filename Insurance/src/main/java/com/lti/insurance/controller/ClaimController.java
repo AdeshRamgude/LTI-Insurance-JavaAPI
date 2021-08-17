@@ -22,7 +22,7 @@ public class ClaimController {
 	ClaimService claimService;
 	
 	@GetMapping("/claim")
-	public List<Claim> getAll(){
+	public List<Claim> getAllClaims(){
 		return claimService.getClaims();
 	}
 	
@@ -40,6 +40,7 @@ public class ClaimController {
 	public boolean addStatus(@RequestBody Claim claim) {
 		return claimService.addStatus(claim);
 	}
+	
 	@GetMapping("/admin/{id}")
 	public Claim getbyid(@PathVariable(value="id")int id) {
 		return claimService.getbyid(id);
@@ -48,5 +49,10 @@ public class ClaimController {
 	@GetMapping("/claim/{id}")
 	public List<Claim> getbyuserid(@PathVariable(value="id")int id) {
 		return claimService.getbyuserid(id);
+	}
+	
+	@GetMapping("/highestid")
+	public int getHigestId() {
+		return claimService.highestid();
 	}
 }

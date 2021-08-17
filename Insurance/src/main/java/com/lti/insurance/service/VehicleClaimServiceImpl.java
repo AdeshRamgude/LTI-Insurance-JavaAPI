@@ -44,7 +44,7 @@ public class VehicleClaimServiceImpl implements VehicleClaimService {
 	@Override
 	public VehicleClaim getbyidvehicle(int id) {
 		// TODO Auto-generated method stub
-		return vehicleclaimRepo.findById(id).get();
+		return vehicleclaimRepo.getbyidvehicle(id);
 	}
 
 	@Override
@@ -54,6 +54,15 @@ public class VehicleClaimServiceImpl implements VehicleClaimService {
 		return true;
 	}
 
+	@Override
+	public int highestid1() {
+		return vehicleclaimRepo.getHigestId1();
+	}
 
+	@Override
+	public List<VehicleClaim> getbyidvehicle1(int id) {
+		// TODO Auto-generated method stub
+		return vehicleclaimRepo.getbyidvehicle1(id);
+	}
 
 }

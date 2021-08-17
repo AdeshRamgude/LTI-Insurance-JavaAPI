@@ -1,5 +1,7 @@
 package com.lti.insurance.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,9 +16,9 @@ public class TraveluserServiceImpl implements TraveluserService{
 	TraveluserRepository traveluserRepo;
 
 	@Override
-	public Traveluser getbyidtraveluser(int id) {
+	public List<Traveluser> getbyidtraveluser(int id) {
 		// TODO Auto-generated method stub
-		return traveluserRepo.findById(id).get();
+		return traveluserRepo.getbyidtraveluser(id);
 	}
 
 }

@@ -15,8 +15,7 @@ public class Claim {
 	private String ticketresolveddate;
 	private String policyno;
 	private String reason;
-	private String userid;
-	
+	private int userid;
 	public int getClaimid() {
 		return claimid;
 	}
@@ -59,14 +58,14 @@ public class Claim {
 	public void setReason(String reason) {
 		this.reason = reason;
 	}
-	public String getUserid() {
+	public int getUserid() {
 		return userid;
 	}
-	public void setUserid(String userid) {
+	public void setUserid(int userid) {
 		this.userid = userid;
 	}
-	public Claim(int claimid, String type, String ticketdate, String status, String ticketresolveddate,
-			String policyno, String reason,String userid) {
+	public Claim(int claimid, String type, String ticketdate, String status, String ticketresolveddate, String policyno,
+			String reason, int userid) {
 		super();
 		this.claimid = claimid;
 		this.type = type;
@@ -74,14 +73,21 @@ public class Claim {
 		this.status = status;
 		this.ticketresolveddate = ticketresolveddate;
 		this.policyno = policyno;
-		this.reason=reason;
-		this.userid=userid;
+		this.reason = reason;
+		this.userid = userid;
 	}
-	
 	public Claim() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public String toString() {
+		return "Claim [claimid=" + claimid + ", type=" + type + ", ticketdate=" + ticketdate + ", status=" + status
+				+ ", ticketresolveddate=" + ticketresolveddate + ", policyno=" + policyno + ", reason=" + reason
+				+ ", userid=" + userid + "]";
+	}
+	
+	
 	
 	
 }

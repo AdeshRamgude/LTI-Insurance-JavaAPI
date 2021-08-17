@@ -1,5 +1,7 @@
 package com.lti.insurance.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +21,7 @@ public class TraveluserController {
 	TraveluserService traveluserService;
 	
 	@GetMapping("/claim/traveluser/{id}")
-	public Traveluser getbyidtraveluser(@PathVariable(value="id")int id) {
+	public List<Traveluser> getbyidtraveluser(@PathVariable(value="id")int id) {
 		return traveluserService.getbyidtraveluser(id);
 	}
 }

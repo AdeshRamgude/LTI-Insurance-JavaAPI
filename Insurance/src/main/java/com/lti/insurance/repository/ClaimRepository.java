@@ -12,4 +12,7 @@ import com.lti.insurance.model.Claim;
 public interface ClaimRepository extends JpaRepository<Claim, Integer>{
 	@Query("select c from Claim c where c.userid =?1")
 	public List<Claim> getbyuserid(int id);
+
+	@Query("select max(p.claimid) from Claim p")
+	public int getHigestId();
 }

@@ -14,4 +14,7 @@ public interface VehicleClaimService {
 	public boolean addVehicleStatus1(VehicleClaim vehicleclaim);
 	
 	public VehicleClaim getbyidvehicle(int id);
+	
+	public List<VehicleClaim> getbyidvehicle1(int id);
+	public int highestid1();
 }

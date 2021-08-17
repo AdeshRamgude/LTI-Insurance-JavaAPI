@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lti.insurance.model.Claim;
 import com.lti.insurance.model.VehicleClaim;
 import com.lti.insurance.service.VehicleClaimService;
 
@@ -48,8 +47,18 @@ public class VehicleClaimController {
 		return vehicleClaimService.getbyidvehicle(id);
 	}
 	
+	@GetMapping("/claim/vehicleclaim/{id}")
+	public List<VehicleClaim> getbyidvehicle1(@PathVariable(value="id")int id) {
+		return vehicleClaimService.getbyidvehicle1(id);
+	}
+	
 	@PutMapping("/admin/vehicleclaim")
 	public boolean addVehicleStatus1(@RequestBody VehicleClaim vehicleclaim) {
 		return vehicleClaimService.addVehicleStatus(vehicleclaim);
+	}
+	
+	@GetMapping("/highestid1")
+	public int getHigestId1() {
+		return vehicleClaimService.highestid1();
 	}
 }
